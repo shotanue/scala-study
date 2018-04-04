@@ -86,9 +86,42 @@ object ExpressionSandbox extends App {
   //  val sex = Map(1 -> "男性", 2 -> "女性")
 
   /*
-   *
-   *  */
+  * 下のこれをやりたいが。。。
+<?php
 
+$f_name = ['ほげかわ', 'ふがやま'];
+$name = ['ほげ太郎', 'ふがこ'];
+$sex = ['男性', '女性'];
+
+$aggregate = function($f_name,$name,$sex){return compact('f_name', 'name', 'sex');};
+
+$res = array_map($aggregate,$f_name, $name,$sex);
+var_dump($res);
+
+/*
+array(2) {
+  [0]=>
+  array(3) {
+    ["f_name"]=>
+    string(12) "ほげかわ"
+    ["name"]=>
+    string(12) "ほげ太郎"
+    ["sex"]=>
+    string(6) "男性"
+  }
+  [1]=>
+  array(3) {
+    ["f_name"]=>
+    string(12) "ふがやま"
+    ["name"]=>
+    string(9) "ふがこ"
+    ["sex"]=>
+    string(6) "女性"
+  }
+}
+*/
+
+  * */
   //PHPのarray_mapは可変長引数なのでそれっぽいことをやろうとしたがうまくいかない。
   //  List(f_name, name, sex).map((f: Map[Int, String], name: Map[Int, String], sex: Map[Int, String]) => {""})
 
