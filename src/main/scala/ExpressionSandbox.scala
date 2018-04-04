@@ -121,6 +121,7 @@ array(2) {
 }
 */
 
+
   * */
   //PHPのarray_mapは可変長引数なのでそれっぽいことをやろうとしたがうまくいかない。
   //  List(f_name, name, sex).map((f: Map[Int, String], name: Map[Int, String], sex: Map[Int, String]) => {""})
