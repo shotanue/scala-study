@@ -24,4 +24,5 @@ class s99 {
     if (xs.isEmpty) 0 else
       xs.reduce((curry, _) => curry + 1)
   }
+
 }

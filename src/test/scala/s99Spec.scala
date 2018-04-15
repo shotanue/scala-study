@@ -28,4 +28,5 @@ class s99Spec extends Specification {
       s99.count(fourItems) must_== 4
     }
   }
+
 }
