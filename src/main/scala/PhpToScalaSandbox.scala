@@ -34,35 +34,22 @@ object PhpToScalaSandbox extends App {
   }
   */
 
-//  println(Map(0 =>(Map( "name"->"fugataro"), Map("sex"->"male")))
-  val grouped  = List(Array(Map( "name"->"fugataro"), Map("sex"->"male")))
+  val f_name = Array("ほげかわ", "ふがやま")
+  val name = Array("ほげ太郎", "ふがこ")
+  val sex = Array("男性", "女性")
 
-//  val op = (x:String ,y:String )=> println(x,y)
-//  grouped map {case (x, y )=> op(x,y)}
+  //zipをつくとタプルができるらしいので、三つ繋げるとこうなる
+  //((ほげかわ,ほげ太郎),男性)
+  //((ふがやま,ふがこ),女性)
 
-  /*
-  list($first_g, $second_g) = $res;
-  var_dump($first_g,$second_g);
-
-
-  array(3) {
-    ["f_name"]=>
-    string(12) "ほげかわ"
-    ["name"]=>
-    string(12) "ほげ太郎"
-    ["sex"]=>
-    string(6) "男性"
-  }
-  array(3) {
-    ["f_name"]=>
-    string(12) "ふがやま"
-    ["name"]=>
-    string(9) "ふがこ"
-    ["sex"]=>
-    string(6) "女性"
+  // mapにパターンマッチを入れられるようなので、
+  // こんな感じのことをすると、それっぽいのができる見たい。
+  // ただし、３種類全て同じ数じゃないと、溢れた分は消えてしまう様子。
+  val grouped = f_name zip name zip sex map {
+    case ((a, b), c) => (a, b, c)
   }
 
-  * */
+  grouped.foreach(println)
 
 
 }
