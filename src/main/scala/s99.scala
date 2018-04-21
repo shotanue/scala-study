@@ -19,6 +19,21 @@ class s99 {
   //    case _ => throw new NoSuchElementException
   //  }
 
+  //P2 写経
+  def penultimate[A](ls:List[A]) : A = ls match {
+    // head :: body :: tail の順番で構造が取れる
+
+    //　再帰して再帰して再帰して、、最後のループでじゃあ、どの構造になっているか？
+    // と言うイメージがつくと良いかもしれない。
+    // （ただ、単純なケースの場合のみに適用できる発想かもしれない）
+    case h::_::Nil => h
+    case _ :: tail =>  penultimate(tail)
+    case _ => throw  new NoSuchElementException
+  }
+
+
+
+
   //reduceで実装してみる
   def count(xs: List[Int]): Int = {
     if (xs.isEmpty) 0 else

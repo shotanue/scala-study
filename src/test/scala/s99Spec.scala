@@ -11,6 +11,17 @@ class s99Spec extends Specification {
       s99.last(tmp) must_== 3
     }
   }
+
+   "P2 (*) Find the last but one element of a list." should {
+    "" in {
+      s99.penultimate(List(1,1, 2, 3, 5, 8)) must_== 5
+      s99.penultimate(List(1,1, 2, 3, 5, 8 , 10)) must_==8
+    }
+  }
+
+
+
+
   "Listのカウント" >> {
     "空は0を返す" >> {
       s99.count(List()) must_== 0
