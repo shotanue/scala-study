@@ -139,4 +139,7 @@ array(2) {
   //キー（インデックス）は文字列にできないのだろうか
 
 
+  val tmp = (new s99).nth(2, List(1,2,3,4))
+  println(tmp)
+
 }

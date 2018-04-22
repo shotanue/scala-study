@@ -12,14 +12,17 @@ class s99Spec extends Specification {
     }
   }
 
-   "P2 (*) Find the last but one element of a list." should {
+  "P2 (*) Find the last but one element of a list." should {
     "" in {
-      s99.penultimate(List(1,1, 2, 3, 5, 8)) must_== 5
-      s99.penultimate(List(1,1, 2, 3, 5, 8 , 10)) must_==8
+      s99.penultimate(List(1, 1, 2, 3, 5, 8)) must_== 5
+      s99.penultimate(List(1, 1, 2, 3, 5, 8, 10)) must_== 8
+    }
+    "P03 (*) Find the Kth element of a list." should {
+      "" in {
+        s99.nth(2, List(1, 1, 2, 3, 5, 8)) must_== 2
+      }
     }
   }
-
-
 
 
   "Listのカウント" >> {

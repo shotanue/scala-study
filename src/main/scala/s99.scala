@@ -11,6 +11,7 @@ class s99 {
     case _ :: tail => last(tail)
     case _ => throw new NoSuchElementException
   }
+
   //P01
   //写経をいじって順番を入れ替えるとうごかない。
   //  def last[A](list:List[A]): A = list match {
@@ -20,18 +21,28 @@ class s99 {
   //  }
 
   //P2 写経
-  def penultimate[A](ls:List[A]) : A = ls match {
+  def penultimate[A](ls: List[A]): A = ls match {
     // head :: body :: tail の順番で構造が取れる
 
     //　再帰して再帰して再帰して、、最後のループでじゃあ、どの構造になっているか？
     // と言うイメージがつくと良いかもしれない。
     // （ただ、単純なケースの場合のみに適用できる発想かもしれない）
-    case h::_::Nil => h
-    case _ :: tail =>  penultimate(tail)
-    case _ => throw  new NoSuchElementException
+    case h :: _ :: Nil => h
+    case _ :: tail => penultimate(tail)
+    case _ => throw new NoSuchElementException
   }
 
+  //P3
+  //(*) Find the Kth element of a list.
 
+  //任意の箇所でループを止める問題
+  //タプルをパターンマッチに渡せるらしい
+  def nth[A](n: Int, ls: List[A]): A = (n, ls) match {
+    //指定したindexまで再帰して、indexが0になったら残りの要素の先頭を返す
+    case (0, h :: _) => h
+    case (n, _ :: tail) => nth(n - 1, tail)
+    case (_, Nil) => throw new NoSuchElementException
+  }
 
 
   //reduceで実装してみる
@@ -39,5 +50,6 @@ class s99 {
     if (xs.isEmpty) 0 else
       xs.reduce((curry, _) => curry + 1)
   }
+
 
 }
