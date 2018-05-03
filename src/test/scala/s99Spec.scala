@@ -1,5 +1,6 @@
 //import org.specs2._
 import org.specs2.mutable.Specification
+import s99._
 
 class s99Spec extends Specification {
   val s99 = new s99()
@@ -40,6 +41,19 @@ class s99Spec extends Specification {
     "最後の値が戻り値ではない" >> {
       val fourItems = List(1, 2, 3, 9999)
       s99.count(fourItems) must_== 4
+    }
+  }
+
+  "P4" should {
+    "count List" in {
+      P4.length(List(1,1,1,1)) must_== 4
+      P4.foldLength(List(1,2,3,4,1,2,3,4)) must_== 8
+    }
+  }
+
+  "P5" should {
+    "count List" in {
+      P5.reverse(List(1,2,3,4)) must_== List(4,3,2,1)
     }
   }
 
