@@ -46,15 +46,22 @@ class s99Spec extends Specification {
 
   "P4" should {
     "count List" in {
-      P4.length(List(1,1,1,1)) must_== 4
-      P4.foldLength(List(1,2,3,4,1,2,3,4)) must_== 8
+      P4.length(List(1, 1, 1, 1)) must_== 4
+      P4.foldLength(List(1, 2, 3, 4, 1, 2, 3, 4)) must_== 8
     }
   }
 
   "P5" should {
     "count List" in {
-      P5.reverse(List(1,2,3,4)) must_== List(4,3,2,1)
+      P5.reverse(List(1, 2, 3, 4)) must_== List(4, 3, 2, 1)
+    }
+
+    "P6:List(1,2,3,2,1)" should {
+      "be palindrome" in {
+        P6.isPalindrome(List(1,2,3,2,1)) must_== true
+      }
     }
   }
+
 
 }
