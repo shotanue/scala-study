@@ -64,7 +64,20 @@ class s99Spec extends Specification {
 
   "P7:flatten(List(List(1, 1), 2, List(3, List(5, 8))))" should {
     "List(1, 1, 2, 3, 5, 8)" in {
-      P7.flatten(List(List(1, 1), 2, List(3, List(5, 8))))must_== List(1, 1, 2, 3, 5, 8)
+      P7.flatten(List(List(1, 1), 2, List(3, List(5, 8)))) must_== List(1, 1, 2, 3, 5, 8)
+    }
+  }
+
+  "P8:" should {
+    "" in {
+      P8.compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) must_== List('a, 'b, 'c, 'a, 'd, 'e)
+    }
+  }
+
+
+  "P9" should {
+    "" in {
+      P9.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) must_== List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
     }
   }
 
